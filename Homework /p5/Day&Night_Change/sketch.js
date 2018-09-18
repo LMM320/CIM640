@@ -29,4 +29,12 @@ function draw() {
   rect(rectX,rectY,rectSize,rectSize)
 }
 
-function mousePressed()
+function mousePressed(){
+  r = random(0,256);
+  g = random(0,256);
+  b = random(0,256);
+}
+
+
+//end of code
+}
