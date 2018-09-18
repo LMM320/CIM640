@@ -1,0 +1,21 @@
+var a = 1;
+var num1 = 2;
+var b = 'b';
+var word1 = "word";
+var trueFalse = true;
+var sentences = "I'm a sentence";
+
+
+function setup() {
+// put setup code here
+createCanvas (400,400);
+background(0);
+background(255,255,255);
+background("orange");
+background("#333333");
+
+console.log(a + num1);
+console.log(a-num1);
+console.log(a + b);
+console.log(a * b);
+}
