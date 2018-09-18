@@ -30,11 +30,10 @@ function draw() {
 }
 
 function mousePressed(){
+
+  if(mouseX > rectX && mouseX < rectX + rectSize && mouseY < rectY + rectSize){
   r = random(0,256);
   g = random(0,256);
   b = random(0,256);
-}
-
-
-//end of code
+  }
 }
