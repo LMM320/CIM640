@@ -48,7 +48,9 @@ function setup() {
       console.log("x  " + posX[a] + "y: " + posY[a]);
     }
 
-})
+
+
+});
 
   curImage = sun;
 
@@ -63,7 +65,7 @@ function draw() {
   //  console.log(i);
   //  image(curImage, random(width), random(height))
   // }
-  for(var i = 0; i< posX.length; i ++){
+  for(var i = 0; i<numberOfImages; i ++){
     image(curImage, posX[i], posY[i], curImage.width/4, curImage.height/4);
   }
 }
