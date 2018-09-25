@@ -32,28 +32,27 @@ function setup() {
 
   submitButton = createInput("Create Pattern")
   submitButton.position (10,50);
-  submitButton.mousePressed(function();
+  submitButton.mousePressed(function(){
     numberOfImages = textInput.value();
     console.log (numberOfImages);
 
-  if(selection.value() == "sun"){
-    curImage = sun;
-  }else if(selection.value() == "moon"){
+    if(selection.value() == "sun"){
       curImage = sun;
-  }
+    } else if(selection.value() == "moon"){
+      curImage = sun;
+    }
 
-  for(var a = 0; i < numberOfImages; a++){
-    posX[a] = random(width);
-    posY[a] = random(height);
-  }
+    for (var a = 0; a < numberOfImages; a++ ){
+      posX[a] = random(width);
+      posY[a] = random(height);
+      console.log("x  " + posX[a] + "y: " + posY[a]);
+    }
 
-
-
-});
+})
 
   curImage = sun;
 
-  console.log(posX[1]);
+//  console.log(posX[1]);
 }
 
 function draw() {
@@ -64,8 +63,8 @@ function draw() {
   //  console.log(i);
   //  image(curImage, random(width), random(height))
   // }
-  for(var i = 0; i<){
-    image(curImage,posX[i],posY[i],curImage.width/4 curImage.height/4);
+  for(var i = 0; i< posX.length; i ++){
+    image(curImage, posX[i], posY[i], curImage.width/4, curImage.height/4);
   }
 }
 
