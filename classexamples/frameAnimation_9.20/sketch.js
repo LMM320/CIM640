@@ -42,10 +42,13 @@ function setup() {
       curImage = sun;
     }
 
+    posX = [];
+    posY = [];
+
     for (var a = 0; a < numberOfImages; a++ ){
       posX[a] = random(width);
       posY[a] = random(height);
-      console.log("x  " + posX[a] + "y: " + posY[a]);
+      console.log("x  " + posX[a] + " y: " + posY[a]);
     }
 
 
