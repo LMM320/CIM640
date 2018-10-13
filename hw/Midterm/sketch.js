@@ -1,4 +1,4 @@
-var frameAmounts = 4;
+var frameAmounts = 5;
 var frameArray = [];
 var currentFrame = 0;
 
@@ -11,25 +11,23 @@ var counter = 0;
 
 // Below is a pattern key
 var controls = {
-                  "play" : [50,400,50,"green"],
-                  "stop" : [110,400,50,"red"]
+                  "play" : [50,600,50,'green'],
+                  "stop" : [110,600,50,"red"]
+
 
                 };
 
 var state = "stop";
 
 function preload(){
-  // var frameString = "assets/Thatwasclose0.jpg";
-  // frameArray[0] = loadImage(frameString);
-//notes: starting point, condition, and how it iterates
   for(var frames = 0; frames< frameAmounts; frames++){
-    var frameString = "assets/Thatwasclose" + frames + ".jpg";
+    var frameString = "assets/snowhouse" + frames + ".png";
     frameArray[frames] = loadImage(frameString);
   }
 }
 
 function setup(){
-    createCanvas(500,500);
+    createCanvas(800,800);
     console.log(controls["play"]);
     console.log(controls["play"][3]); // green
 
@@ -39,29 +37,15 @@ function setup(){
 }
 
 function draw(){
-  //frameRate(1)
-  //console.log(millis());
   image(frameArray[currentFrame],0,0);
 
 if(millis() - prevMillis> interval && state == "play"){
   currentFrame++;
   prevMillis = millis();
 }
-  //console.log(currentFrame);
   if(currentFrame > frameAmounts-1){
     currentFrame = 0;
 }
-
-// if(millis() - prevMillis2 > interval2){
-//   counter++;
-//   prevMillis2 = millis();
-// }
-//
-// if(counter > width){
-//   counter = 0;
-// }
-//
-// ellipse(counter, height/2, 20,20);
 
 ellipse(mouseX,mouseY,10,10);
 
@@ -94,8 +78,6 @@ function mousePressed(){
   }
 
 }
-
-
 
 
 ////end of code
