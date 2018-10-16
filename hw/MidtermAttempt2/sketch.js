@@ -160,11 +160,6 @@ pop();
     speed1 = speed1 * 2;
   }
   x3 = x3 + speed1;
-  }
-
-if(key=='r')
-{
-  p2=0;
 }
 
 //MOON Change
