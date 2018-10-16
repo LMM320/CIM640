@@ -2,6 +2,29 @@ var x3 = 1;
 var speed1 = 4;
 
 var value = '#fbf3aa';
+var starsButton;
+var starRotate = false;
+var Ball = function(x, y) {
+ this.x = x;
+ this.y = y;
+ this.diameter = random(2,10);
+  this.speedX = random(1,-1);
+ this.color= color("random(0,255),random(0,255), random(0,255)");
+
+}
+
+Ball.prototype.show = function() {
+ ellipse(this.x, this.y, this.diameter, this.diameter);
+
+ fill(this.color);
+ noStroke();
+}
+
+Ball.prototype.fall = function() {
+ this.y = this.y + 1;
+}
+
+var balls = [];
 
 
 function preload() {
@@ -13,9 +36,17 @@ function preload() {
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
-  r = random(255);
-  g = random(255);
-  b = random(255);
+
+  x = mouseX;
+  y = mouseY;
+
+  starsButton = createButton("Rotate Stars");
+  starsButton.position(10,10);
+  starsButton.mousePressed(function(){
+
+      starRotate = true;
+  });
+
 }
 
 function setGradient(x, y, w, h, c1, c2, axis) {
@@ -68,7 +99,9 @@ fill('#ffffff');
 noStroke();
 push();
 translate(windowWidth*0.1, windowHeight*0.2);
-rotate(frameCount / 60.0);
+if(starRotate == true){
+  rotate(frameCount / 60.0);
+}
 star(0, 0, 10, 3, 8);
 pop();
 
@@ -76,7 +109,9 @@ fill('#ffffff');
 noStroke();
 push();
 translate(windowWidth*0.2, windowHeight*0.4);
-rotate(frameCount / 60.0);
+if(starRotate == true){
+  rotate(frameCount / 60.0);
+}
 star(0, 0, 10, 3, 8);
 pop();
 
@@ -84,7 +119,9 @@ fill('#ffffff');
 noStroke();
 push();
 translate(windowWidth*0.4, windowHeight*0.2);
-rotate(frameCount / -60.0);
+if(starRotate == true){
+  rotate(frameCount / -60.0);
+}
 star(0, 0, 10, 3, 8);
 pop();
 
@@ -93,7 +130,9 @@ fill('#ffffff');
 noStroke();
 push();
 translate(windowWidth*0.6, windowHeight*0.1);
-rotate(frameCount / 60.0);
+if(starRotate == true){
+  rotate(frameCount / 60.0);
+}
 star(0, 0, 10, 3, 8);
 pop();
 
@@ -101,7 +140,9 @@ fill('#ffffff');
 noStroke();
 push();
 translate(windowWidth*0.8, windowHeight*0.4);
-rotate(frameCount / -60.0);
+if(starRotate == true){
+  rotate(frameCount / -60.0);
+}
 star(0, 0, 10, 3, 8);
 pop();
 
@@ -111,23 +152,47 @@ pop();
   image(p1, 500, 500, p1.width/2, p1.height/2);
 
 //SANTA
+
+  if(key==' ')
+  {console.log("pressed space");
   image(p2, x3, windowHeight*0.2, p2.width/2, p2.height/2);
-//function keyPressed(){
-  if(x3 > windowWidth-p2.width/2 || x3 < 1){
+    if(x3 > windowWidth-p2.width/2 || x3 < 1){
     speed1 = speed1 * 2;
   }
   x3 = x3 + speed1;
+  }
 
+if(key=='r')
+{
+  p2=0;
+}
 
 //MOON Change
   fill(value);
   noStroke();
-  ellipse(325,320,130,130)
+  ellipse(325,320,130,130);
+  for (var i = 0; i < balls.length; i++) {
+    balls[i].show();
+    balls[i].fall();
+    balls[i].x = balls[i].x + balls[i].speedX;
   }
+
+ if (this.y > height) {
+  Ball= Ball * -1;
+
+ }
+
+ if (this.y < 0)
+   Ball= Ball * -1;
+  }
+
   function mousePressed() {
-    if (value === '#fbf3aa') {
-      value = '#f6e974';
-    } else {
-      value = '#fbf3aa';
+    balls.push( new Ball(mouseX, mouseY) );
+    if(mouseX>325 && mouseX<325+130 && mouseY>320 && mouseY<320+130){
+      if (value === '#fbf3aa') {
+       value = '#f6e974';
+      } else {
+        value = '#fbf3aa';
+     }
     }
-  }
+}
