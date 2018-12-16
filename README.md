@@ -8,8 +8,8 @@ Project 2:
 https://lmm320.github.io/CIM640/Homework/#2_Character/index.html
 
 Project 3:
-https://lmm320.github.io/CIM640/Homework/#3_Midterm/index.html
-https://lmm320.github.io/CIM640/Homework/#3_Midterm/readme
+https://lmm320.github.io/CIM640/Homework/#3_Midterm/
+https://lmm320.github.io/CIM640/Homework/#3_Midterm
 
 Project 4:
 https://lmm320.github.io/CIM640/Homework/#4_LibraryResearch
