@@ -5,7 +5,7 @@ https://lmm320.github.io/CIM640/Homework/#1_ImpossibleApp/CHEAPOAPP.jpg
       
 
 Project 2:
-https://lmm320.github.io/CIM640/Homework/#2_Character/sketch.js
+https://lmm320.github.io/CIM640/Homework/#2_Character/sketch.js     
 
 Project 3:
 https://lmm320.github.io/CIM640/Homework/#3_Midterm
