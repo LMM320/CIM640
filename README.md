@@ -1,7 +1,7 @@
 # CIM640
 
 Project 1:
-https://lmm320.github.io/CIM640/Homework/#1_ImpossibleApp/CHEAPO APP.jpg
+https://lmm320.github.io/CIM640/Homework/#1_ImpossibleApp/CHEAPOAPP.jpg
       
 
 Project 2:
